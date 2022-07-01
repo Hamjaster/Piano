@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        body{
+            background-image: linear-gradient(to right, rgba(218, 218, 218, 0.575), rgba(34, 34, 34, 0.548));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .piano{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            height: 90vh;
+        }
+        
+        button {
+    padding: 0px;
+    height: 196px;
+    width: 37px;
+    background: #000;
+    color: rgb(255, 255, 255);
+    font-size: 0px;
+}
+.white_btn {
+    height: 336px;
+    /* height: 158px; */
+    width: 50px;
+    background: rgb(255, 255, 255);
+    color: black;
+    transition: background 0.3s;
+}
+.black_btn {
+    border: 0px solid;
+    border-radius: 6px;
+    margin-top: -190px;
+    margin-left: -39px;
+    margin-right: -2px;
+    margin-bottom: 55px;
+    position: relative;
+    z-index: 2;
+    width: -171px;
+    padding: 0px 0x;
+    right: -17px;
+}
+.white_btn:active{
+    background: rgb(138, 138, 138);
+    
+}
+.black_btn:active{
+    background: rgb(46, 46, 46);
+    
+}
+
+@media(min-width:410px){
+    
+    .black_btn {
+        margin-top: -190px;
+    margin-left: -53px;
+    margin-right: -2px;
+    margin-bottom: 55px;
+    position: relative;
+    z-index: 2;
+    width: -171px;
+    padding: 0px 0x;
+    right: -24px;
+}
+button {
+    padding: 25px;
+    height: 196px;
+    width: 37px;
+    background: #000;
+    color: rgb(255, 255, 255);
+    font-size: 0px;
+}
+.white_btn {
+    height: 336px;
+    /* height: 158px; */
+    width: 62px;
+    background: rgb(255, 255, 255);
+    color: black;
+}
+}
+@media(min-width:700px){
+    button {
+    padding: 29px;
+    height: 196px;
+    width: 37px;
+    background: #000;
+    color: rgb(255, 255, 255);
+    font-size: 0px;
+}
+.white_btn {
+    height: 336px;
+    /* height: 158px; */
+    width: 85px;
+    background: rgb(255, 255, 255);
+    color: black;
+}
+
+.black_btn {
+    margin-top: -190px;
+    margin-left: -69px;
+    margin-right: -2px;
+    margin-bottom: 55px;
+    position: relative;
+    z-index: 2;
+    width: -171px;
+    padding: 0px 0x;
+    right: -36px;
+}
+
+
+
+}
+@media(max-width:390px){
+ 
+    .black_btn{
+height: 126px;
+}
+.white_btn{
+        height: 230px;
+
+    }
+   
+
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- <div class="head">Electronic Piano</div> -->
+    <div class="piano">
+    <div class="white">
+        <button class="white_btn" id="one" onkeypress="keypress"  onclick="playone()"> 1</button>
+        <audio id='aud_one' src="sounds/main-1.mp3"></audio>
+    </div>
+    
+    <div>
+        <button class='black_btn' id="two" onclick="playtwo()" >2</button>
+        <audio id='aud_two' src="sounds/black-1.mp3"></audio>
+    </div>
+    
+    <div class="white">
+        <button class="white_btn" id="three" onclick="playthree()" >3</button>
+        <audio id='aud_three' src="sounds/main-2.mp3"></audio>
+    </div>
+    <div>
+        <button class='black_btn' id="four" onclick="playfour()" >4</button>
+        <audio id='aud_four' src="sounds/black-2.mp3"></audio>
+    </div>
+    <div class="white">
+        <button class="white_btn" id="five" onclick="playfive()" >5</button>
+        <audio id='aud_five' src="sounds/main-3.mp3"></audio>
+    </div>
+    <div>
+        <button class='black_btn' id="six" onclick="playsix()" >6</button>
+        <audio id='aud_six' src="sounds/black-3.mp3"></audio>
+    </div>
+    <div class="white">
+        <button class="white_btn" id="seven" onclick="playseven()" >7</button>
+        <audio id='aud_seven' src="sounds/main-4.mp3"></audio>
+    </div>
+    <div>
+        <button class='black_btn' id="eight" onclick="playeight()" >8</button>
+        <audio id='aud_eight' src="sounds/black-4.mp3"></audio>
+    </div>
+    <div class="white">
+        <button class="white_btn" id="nine" onclick="playnine()" >9</button>
+        <audio id='aud_nine' src="sounds/main-5.mp3"></audio>
+    </div>
+    <div>
+        <button class='black_btn' id="ten" onclick="playten()" >10</button>
+        <audio id='aud_ten' src="sounds/black-5.mp3"></audio>
+    </div>
+    <div class="white">
+        <button class="white_btn" id="ten" onclick="playeleven()" >11</button>
+        <audio id='aud_eleven' src="sounds/main-51.mp3"></audio>
+    </div>
+</div>
+</body>
+<script>
+
+
+let aud_one = document.getElementById('aud_one')
+let aud_two = document.getElementById('aud_two')
+let aud_three = document.getElementById('aud_three')
+let aud_four = document.getElementById('aud_four')
+let aud_five = document.getElementById('aud_five')
+let aud_six = document.getElementById('aud_six')
+let aud_seven = document.getElementById('aud_seven')
+let aud_eight = document.getElementById('aud_eight')
+let aud_nine = document.getElementById('aud_nine')
+let aud_ten = document.getElementById('aud_ten')
+let aud_eleven = document.getElementById('aud_eleven')
+
+function playone(){
+    aud_one.play();
+}
+function playtwo(){
+    aud_two.play(); 
+}
+function playthree(){
+    aud_three.play();
+}
+
+function playfour(){
+    aud_four.play(); 
+}
+function playfive(){
+    aud_five.play();
+}
+function playsix(){
+    aud_six.play();
+}
+function playseven(){
+    aud_seven.play(); 
+}
+function playeight(){
+    aud_eight.play();
+}
+function playnine(){
+    aud_nine.play();
+}
+function playten(){
+    aud_ten.play();
+}
+function playeleven(){
+    aud_eleven.play();
+}
+function keypress(e){
+    if(e==97){
+        playone();
+    }
+}
+
+</script>
+</html>
